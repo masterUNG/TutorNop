@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Content-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="vertical">
+
+        <!--Logo-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/pre_logo" />
+
+        <!--User-->
+        <EditText
+            android:layout_marginTop="25dp"
+            android:inputType="text"
+            android:textColorHint="@color/colorWhite"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/h3"
+            android:hint="User"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textfield_user" />
+
+        <!--Password-->
+        <EditText
+            android:layout_marginTop="25dp"
+            android:inputType="textPassword"
+            android:textColorHint="@color/colorWhite"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/h3"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textfield_password" />
+
+        <!--Sing In-->
+        <Button
+            android:layout_marginTop="25dp"
+            android:textColor="@color/colorBlue"
+            android:text="Sign In"
+            android:background="@drawable/button_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--Social-->
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/h2"
+            android:text="Login With Social Account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--Logo Social-->
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginRight="60dp"
+                android:layout_marginLeft="60dp"
+                android:src="@drawable/twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Register-->
+
+
+    </LinearLayout>
+
+    <!--Foot Bar-->
+
+</RelativeLayout>
