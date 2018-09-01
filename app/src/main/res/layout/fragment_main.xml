@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <!--Content-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Login-->
+        <RelativeLayout
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!--icon-->
+                <ImageView
+                    android:src="@drawable/icon_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--Text-->
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/h2"
+                    android:text="Login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <!--Search-->
+
+        <!--Banner-->
+
+        <!--Course-->
+
+        <!--Category-->
+
+        <!--Foot Bar-->
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
