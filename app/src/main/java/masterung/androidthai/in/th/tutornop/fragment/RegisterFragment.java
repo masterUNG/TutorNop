@@ -12,6 +12,13 @@ import masterung.androidthai.in.th.tutornop.R;
 
 public class RegisterFragment extends Fragment{
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
+
+    }   // Main Method
 
     @Nullable
     @Override

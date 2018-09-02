@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--Title-->
             <TextView
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center_horizontal"
@@ -38,10 +39,41 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:textColorHint="@color/colorGray"
+                    android:hint="FirstName LastName"
+                    android:id="@+id/edtName"
                     android:textSize="@dimen/h2"
                     android:background="@drawable/textfield_user"
                     android:textColor="@color/colorWhite"
                     android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--id Card-->
+            <LinearLayout
+                android:layout_marginTop="@dimen/m1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="@dimen/m2"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/h3"
+                    android:text="ID Card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:textColorHint="@color/colorGray"
+                    android:hint="13 Digi"
+                    android:id="@+id/edtIDcard"
+                    android:textSize="@dimen/h2"
+                    android:background="@drawable/textfield_user"
+                    android:textColor="@color/colorWhite"
+                    android:inputType="number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -63,6 +95,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/edtEmail"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/h2"
                     android:background="@drawable/textfield_user"
@@ -88,6 +121,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/edtPassword"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/h2"
                     android:background="@drawable/textfield_password"
@@ -113,6 +147,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/edtRePassword"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/h2"
                     android:background="@drawable/textfield_password"
@@ -130,6 +165,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
+                    android:id="@+id/btnStudent"
                     android:layout_marginRight="3dp"
                     android:textColor="@color/colorBlue"
                     android:background="@drawable/button_white"
@@ -139,6 +175,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
+                    android:id="@+id/btnTeacher"
                     android:layout_marginLeft="3dp"
                     android:textColor="@color/colorBlue"
                     android:background="@drawable/button_white"
