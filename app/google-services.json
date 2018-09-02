@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "849487837690",
+    "firebase_url": "https://tutornop-69161.firebaseio.com",
+    "project_id": "tutornop-69161",
+    "storage_bucket": "tutornop-69161.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849487837690:android:2c4f8c7e245705a6",
+        "android_client_info": {
+          "package_name": "masterung.androidthai.in.th.tutornop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849487837690-u4370mqan82lnouq0l4k3lq3t50so1ji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "masterung.androidthai.in.th.tutornop",
+            "certificate_hash": "99f1de59cbbb9f0ab27aeb63c596235bc843b92a"
+          }
+        },
+        {
+          "client_id": "849487837690-jc5pppli1k76tsgo7rjremlohtt70utq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGKoNsFbZDC8mA8PYkFeekKP3kGRgGdcg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849487837690-jc5pppli1k76tsgo7rjremlohtt70utq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

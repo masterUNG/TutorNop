@@ -23,7 +23,11 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentMainFragment, new RegisterFragment())
+                        .commit();
 
             }
         });
