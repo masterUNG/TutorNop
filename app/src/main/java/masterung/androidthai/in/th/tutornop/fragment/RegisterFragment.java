@@ -4,14 +4,27 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import masterung.androidthai.in.th.tutornop.R;
 import masterung.androidthai.in.th.tutornop.utility.MyAlert;
+import masterung.androidthai.in.th.tutornop.utility.MyModel;
 
 public class RegisterFragment extends Fragment{
 
@@ -52,12 +65,12 @@ public class RegisterFragment extends Fragment{
         });
     }
 
-    private void checkData(String childString) {
+    private void checkData(final String childString) {
 
 //        Get Value from Edittext to String
         EditText nameEditText = getView().findViewById(R.id.edtName);
         EditText idCardEditText = getView().findViewById(R.id.edtIDcard);
-        EditText emailEditText = getView().findViewById(R.id.edtIDcard);
+        EditText emailEditText = getView().findViewById(R.id.edtEmail);
         EditText passwordEditText = getView().findViewById(R.id.edtPassword);
         EditText rePasswordEditText = getView().findViewById(R.id.edtRePassword);
 
@@ -67,7 +80,7 @@ public class RegisterFragment extends Fragment{
         passwordString = passwordEditText.getText().toString().trim();
         rePasswordString = rePasswordEditText.getText().toString().trim();
 
-        MyAlert myAlert = new MyAlert(getActivity());
+        final MyAlert myAlert = new MyAlert(getActivity());
 
         if (nameString.isEmpty() ||
                 idCardString.isEmpty() ||
@@ -87,17 +100,60 @@ public class RegisterFragment extends Fragment{
         } else {
 //            Password True
 
+            final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+            firebaseAuth.createUserWithEmailAndPassword(emailString, passwordString)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
 
-        }
+                                final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                                UserProfileChangeRequest userProfileChangeRequest = new UserProfileChangeRequest
+                                        .Builder().setDisplayName(nameString).build();
+                                firebaseUser.updateProfile(userProfileChangeRequest)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d("2SepV1", "DisplayName ==> " + firebaseUser.getDisplayName());
+                                                insertValueDatabase(firebaseUser.getUid(), childString);
+                                            }
+                                        });
+
+                            } else {
+                                myAlert.normalDialog("Cannot Register",
+                                        task.getException().getMessage().toString());
+                            }
+                        }
+                    });
 
 
 
-
-
-
-
+        }   //if
 
     }   // checkData
+
+    private void insertValueDatabase(String uidString, String childString) {
+
+        MyModel myModel = new MyModel(nameString, idCardString, uidString);
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference().child(childString);
+        databaseReference.child(uidString).setValue(myModel)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        getActivity()
+                                .getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.contentMainFragment, new MainFragment())
+                                .commit();
+
+                    }
+                });
+
+
+    }   // insert
 
     @Nullable
     @Override
